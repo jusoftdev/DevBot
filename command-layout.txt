@@ -1,0 +1,11 @@
+module.exports = {
+    name: '',
+    category: '',
+    permissions: ['SEND_MESSAGES'],
+    cooldown: '5s',
+    testOnly: false,
+
+    callback: ({ message, client }) => {
+        message.channel.send(`Something`)
+    }
+}
