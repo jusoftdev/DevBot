@@ -20,7 +20,7 @@ module.exports = {
             embed.setDescription(`
             My prefix in **${message.guild.name}** - \`${prefix}\`
             To access all my commands - \`${prefix}help\`
-            Project developed by **[JuSoft](http://jsft.be/discord)**`)
+            Project developed by **[JuSoft](https://jusoft.dev)**`)
             embed.addFields({
                 name: 'Total Members',
                 value: `┕\`${client.users.cache.size}\``,
