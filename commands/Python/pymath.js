@@ -33,7 +33,7 @@ const pystringEmbed = new Discord.MessageEmbed()
                 "\n" +
                 "print(x)" +
                 "```\n" +
-                "The `pow(x, y)\ function returns the value of x to the power of y (xy).\n" +
+                "The `pow(x, y)`\ function returns the value of x to the power of y (xy).\n" +
                 "```py\n" +
                 "x = pow(4, 3)\n" +
                 "\n" +
