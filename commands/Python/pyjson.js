@@ -136,6 +136,7 @@ const pystringEmbed = new Discord.MessageEmbed()
                 "```"
         },
     )
+    .setImage("https://i.imgur.com/Or8HcY6.png")
     .setTimestamp()
     .setFooter(`DevBot Python Documentation • ${prefix}py`);
 
