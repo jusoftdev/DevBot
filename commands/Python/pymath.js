@@ -45,7 +45,7 @@ const pystringEmbed = new Discord.MessageEmbed()
             value:
                 "Python has also a built-in module called `math`, which extends the list of mathematical functions.\n" +
                 "\n" +
-                "To use it, you must import the `math module:\n" +
+                "To use it, you must import the `math module`:\n" +
                 "```py\n" +
                 "import math" +
                 "```\n" +
