@@ -6,8 +6,9 @@ require('./buttons')(client);
 const WOKCommands = require('wokcommands');
 
 const { color, prefix, token } = require("./config.js");
+const {pycolor} = require("./config");
 
-const version = "v.1.1.2"
+const version = "v.1.3.2"
 
 const activities_list = [
     "dev help | "+version,
@@ -20,8 +21,11 @@ const activities_list = [
     "jusoft.dev",
     "dev help",
     version,
-    "dev changelog",
-    "made with discordjs"
+    "made with discordjs",
+    "dev py",
+    "invert binary tree",
+    "Error 404 :>",
+    "nothing"
 ];
 
 client.on('ready', () => {
@@ -67,193 +71,80 @@ client.on("message", async (message) => {
 
             const embed1 = new Discord.MessageEmbed()
             embed1.setTitle("Commands for " + client.user.username)
-            embed1.setColor(color)
-            embed1.setFooter('1/5')
+            embed1.setColor(pycolor)
+            embed1.setFooter('1/2')
             embed1.setTimestamp()
             embed1.addFields(
                 {
-                    name: "<:python:794178270211342346> Python",
-                    value: `┕\`${embprefix} py\``,
+                    name: "<:github:858434402307538984> GitHub",
+                    value: `┕\`${embprefix} github\``,
                     inline: true,
                 },
                 {
-                    name: "Dance",
-                    value: `┕\`${embprefix} dance\``,
-                    inline: true,
-                },
-                {
-                    name: "Chillhop",
-                    value: `┕\`${embprefix} chillhop\``,
+                    name: "<:bot:872774084331712512> Invite",
+                    value: `┕\`${embprefix} invite\``,
                     inline: true,
                 })
             embed1.addFields(
                 {
-                    name: "First Dance",
-                    value: `┕\`${embprefix} firstdance\``,
+                    name: "<:info:858603728441180170> Ping",
+                    value: `┕\`${embprefix} ping\``,
                     inline: true,
                 },
                 {
-                    name: "Rap Best",
-                    value: `┕\`${embprefix} rapbest\``,
+                    name: "<:connection:866000655307374623> Statistics",
+                    value: `┕\`${embprefix} stats\``,
                     inline: true,
                 },
                 {
-                    name: "Rap First",
-                    value: `┕\`${embprefix} rapfirst\``,
+                    name: "<:plus:858599381943058442> Suggestions",
+                    value: `┕\`${embprefix} suggest\``,
                     inline: true,
                 })
 
             const embed2 = new Discord.MessageEmbed()
-            embed2.setTitle("Radio Channels For `zapbot`")
-            embed2.setColor(color)
-            embed2.setFooter('2/5')
+            embed2.setTitle("Commands for " + client.user.username)
+            embed2.setColor(pycolor)
+            embed2.setFooter('2/2')
             embed2.setTimestamp()
             embed2.addFields(
                 {
-                    name: "Greatest Hits",
-                    value: `┕\`${embprefix} ghits\``,
+                    name: "<:python:794178270211342346> Python Documentation",
+                    value: `┕\`${embprefix} py\``,
                     inline: true,
                 },
                 {
-                    name: "Hardstyle",
-                    value: `┕\`${embprefix} hardstyle\``,
+                    name: "<:git:873471940818526209> Git Documentation",
+                    value: `┕\`Coming soon\``,
                     inline: true,
                 },
                 {
-                    name: "HipHop",
-                    value: `┕\`${embprefix} hiphop\``,
+                    name: "<:js:873470844817514507> JavaScript Documentation",
+                    value: `┕\`Coming soon\``,
                     inline: true,
                 })
-            embed2.addFields(
-                {
-                    name: "Hits 2021",
-                    value: `┕\`${embprefix} hits21\``,
+            embed2.addFields({
+                    name: "<:html:873471941179232266> HTML Documentation",
+                    value: `┕\`Coming soon\``,
                     inline: true,
                 },
                 {
-                    name: "Hits History",
-                    value: `┕\`${embprefix} hitshistory\``,
+                    name: "<:css:873471941229568050> CSS Documentation",
+                    value: `┕\`Coming soon\``,
                     inline: true,
                 },
                 {
-                    name: "US only Rap",
-                    value: `┕\`${embprefix} usrap\``,
-                    inline: true,
-                })
-
-            const embed3 = new Discord.MessageEmbed()
-            embed3.setTitle("Radio Channels For `zapbot`")
-            embed3.setColor(color)
-            embed3.setFooter('3/5')
-            embed3.setTimestamp()
-            embed3.addFields(
-                {
-                    name: "Mainstage",
-                    value: `┕\`${embprefix} mainstage\``,
-                    inline: true,
-                },
-                {
-                    name: "Mashup",
-                    value: `┕\`${embprefix} mashup\``,
-                    inline: true,
-                },
-                {
-                    name: "Monstercat",
-                    value: `┕\`${embprefix} monstercat\``,
+                    name: "<:go:873471941409906728> Go Documentation",
+                    value: `┕\`Coming soon\``,
                     inline: true,
                 })
 
-            embed3.addFields(
-                {
-                    name: "Music&Chill",
-                    value: `┕\`${embprefix} m&c\``,
-                    inline: true,
-                },
-                {
-                    name: "New Pop",
-                    value: `┕\`${embprefix} newpop\``,
-                    inline: true,
-                },
-                {
-                    name: "Party Hard",
-                    value: `┕\`${embprefix} partyhard\``,
-                    inline: true,
-                })
-
-            const embed4 = new Discord.MessageEmbed()
-            embed4.setTitle("Radio Channels For `zapbot`")
-            embed4.setColor(color)
-            embed4.setFooter('4/5')
-            embed4.setTimestamp()
-            embed4.addFields(
-                {
-                    name: "Robin Schulz",
-                    value: `┕\`${embprefix} robinschulz\``,
-                    inline: true,
-                },
-                {
-                    name: "The Beach",
-                    value: `┕\`${embprefix} thebeach\``,
-                    inline: true,
-                },
-                {
-                    name: "The Club",
-                    value: `┕\`${embprefix} theclub\``,
-                    inline: true,
-                })
-
-            embed4.addFields(
-                {
-                    name: "DJ Mag",
-                    value: `┕\`${embprefix} djmag\``,
-                    inline: true,
-                },
-                {
-                    name: "The Sun",
-                    value: `┕\`${embprefix} sun\``,
-                    inline: true,
-                },
-                {
-                    name: "Top 100 Charts",
-                    value: `┕\`${embprefix} top100\``,
-                    inline: true,
-                })
-
-            const embed5 = new Discord.MessageEmbed()
-            embed5.setTitle('Extra Commands')
-            embed5.setColor(color)
-            embed5.setFooter('5/5')
-            embed5.setTimestamp()
-            embed5.addFields(
-                {
-                    name: 'Invite',
-                    value: `┕\`${embprefix} invite\``,
-                    inline: true,
-                }, {
-                    name: 'Stops Music',
-                    value: `┕\`${embprefix} stop\``,
-                    inline: true,
-                }, {
-                    name: 'Suggest a URL',
-                    value: `┕\`${embprefix} suggest\``,
-                    inline: true,
-                })
-            embed5.addFields({
-                name: 'Stats of zap',
-                value: `┕\`${embprefix} stats\``,
-                inline: true,
-            }, {
-                name: 'Would You Rather',
-                value: `┕\`${embprefix} wyr\``,
-                inline: true,
-            }, {
-                name: 'Now Playing',
-                value: `┕\`coming soon :>\``,
-                inline: true,
-            })
-
-            message.channel.createSlider(message.author.id, [embed1, embed2, embed3, embed4, embed5]);
+            message.channel.createSlider(message.author.id, [embed1, embed2]);
     }
+});
+
+client.on('guildCreate', guild => {
+    guild.systemChannel.send("https://i.imgur.com/z3wU2tF.png")
 });
 
 client.login(token);

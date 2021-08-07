@@ -50,10 +50,6 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: ':busts_in_silhouette: Users',
-                    value: `┕\`${client.users.cache.size}\``,
-                    inline: true
-                }, {
                     name: 'API Latency',
                     value: `┕\`${(message.client.ws.ping)}ms\``,
                     inline: true

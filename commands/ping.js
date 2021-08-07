@@ -22,10 +22,6 @@ module.exports = {
             To access all my commands - \`${prefix}help\`
             Project developed by **[JuSoft](https://jusoft.dev)**`)
             embed.addFields({
-                name: 'Total Members',
-                value: `┕\`${client.users.cache.size}\``,
-                inline: true,
-            },{
                 name: 'Total Servers',
                 value: `┕\`${client.guilds.cache.size}\``,
                 inline: true,

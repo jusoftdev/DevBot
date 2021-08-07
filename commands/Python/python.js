@@ -5,7 +5,7 @@ const pythonEmbed = new Discord.MessageEmbed()
     .setColor(pycolor)
     .setTitle('Python 3.9 Topics')
     .setURL('https://docs.python.org/3/')
-    .setAuthor('DevBot by JuSoft', 'https://cdn.discordapp.com/attachments/828176464041476111/852459976420229120/devbot-100.png')
+    .setAuthor('DevBot by JuSoft | React below to get to page 2', 'https://cdn.discordapp.com/attachments/828176464041476111/852459976420229120/devbot-100.png')
     .setDescription('DevBot <:python:794178270211342346>  Documentation')
     .setThumbnail('https://img.icons8.com/color/2x/python.png')
     .addFields(
@@ -50,8 +50,14 @@ const pythonEmbed = new Discord.MessageEmbed()
                 { name: 'Python Modules', value: 'dev py-modules', inline: true},
                 { name: 'Python Dates', value: 'dev py-dates', inline: true},
     )
+    .setFooter(`DevBot Python Documentation • Page 1 • ${prefix}py`);
 
-const new_embed = new Discord.MessageEmbed()
+const python2_embed = new Discord.MessageEmbed()
+    .setTitle('Python 3.9 Topics')
+    .setURL('https://docs.python.org/3/')
+    .setAuthor('DevBot by JuSoft | React below to get to page 1', 'https://cdn.discordapp.com/attachments/828176464041476111/852459976420229120/devbot-100.png')
+    .setDescription('DevBot <:python:794178270211342346>  Documentation')
+    .setThumbnail('https://img.icons8.com/color/2x/python.png')
     .setColor(pycolor)
     .addFields(
         { name: '<:next:852471014713589790> Python Math', value: 'dev py-math', inline: true},
@@ -67,7 +73,8 @@ const new_embed = new Discord.MessageEmbed()
         { name: '<:next:852471014713589790> Python String Formatting', value: 'dev py-stringformatting', inline: true},
     )
     .setTimestamp()
-    .setFooter(`DevBot Python Documentation • ${prefix}py`);
+    .setFooter(`DevBot Python Documentation • Page 2 • ${prefix}py`);
+
 
 module.exports = {
     name: 'py',
@@ -77,7 +84,25 @@ module.exports = {
     testOnly: false,
 
     callback: ({ message, client }) => {
-        message.channel.send(pythonEmbed)
-        message.channel.send(new_embed)
+        message.channel.send(pythonEmbed).then(embedMessage => {
+            embedMessage.react(`▶`);
+        });
+        client.on('messageReactionAdd', async (reaction, person) => {
+            if (reaction.partial) {
+            }
+            if (reaction.emoji.name === `▶`) {
+                if(person.bot) return;
+                await reaction.message.channel.send(python2_embed).then(embedMessage => {
+                    embedMessage.react(`◀`);
+                });
+            }
+            if (reaction.emoji.name === `◀`) {
+                if(person.bot) return;
+                await reaction.message.channel.send(pythonEmbed).then(embedMessage => {
+                    embedMessage.react(`▶`);
+                });
+            }
+
+        });
     }
 }
